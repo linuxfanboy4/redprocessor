@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RedProcessor</title>
+    <link rel="icon" href="https://raw.githubusercontent.com/linuxfanboy4/redprocessor/refs/heads/main/images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/js/all.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/monaco-editor/0.38.0/min/vs/loader.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Roboto:wght@300;400;700&family=Georgia&family=Open+Sans:wght@300;400;600&family=Quicksand:wght@300;500;700&family=Lora&family=Oswald:wght@400;600&family=Montserrat:wght@300;600&family=Courier+New&family=Indie+Flower&family=Pacifico&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="editor-container">
+        <div class="toolbar">
+            <button onclick="formatText('bold')"><i class="fas fa-bold"></i></button>
+            <button onclick="formatText('italic')"><i class="fas fa-italic"></i></button>
+            <button onclick="formatText('underline')"><i class="fas fa-underline"></i></button>
+            <select id="fontSelector" onchange="changeFont(this.value)">
+                <option value="Arial">Arial</option>
+                <option value="Poppins">Poppins</option>
+                <option value="Roboto">Roboto</option>
+                <option value="Georgia">Georgia</option>
+                <option value="Open Sans">Open Sans</option>
+                <option value="Quicksand">Quicksand</option>
+                <option value="Lora">Lora</option>
+                <option value="Oswald">Oswald</option>
+                <option value="Montserrat">Montserrat</option>
+                <option value="Courier New">Courier New</option>
+                <option value="Indie Flower">Indie Flower</option>
+                <option value="Pacifico">Pacifico</option>
+            </select>
+            <select id="fontSizeSelector" onchange="changeFontSize(this.value)">
+                <option value="16px">16px</option>
+                <option value="18px">18px</option>
+                <option value="22px">22px</option>
+                <option value="28px">28px</option>
+            </select>
+            <select id="colorSelector" onchange="changeColor(this.value)">
+                <option value="black">Black</option>
+                <option value="red">Red</option>
+                <option value="green">Green</option>
+                <option value="blue">Blue</option>
+                <option value="purple">Purple</option>
+                <option value="orange">Orange</option>
+                <option value="brown">Brown</option>
+                <option value="pink">Pink</option>
+                <option value="gray">Gray</option>
+                <option value="yellow">Yellow</option>
+                <option value="cyan">Cyan</option>
+                <option value="magenta">Magenta</option>
+                <option value="lime">Lime</option>
+                <option value="teal">Teal</option>
+            </select>
+            <button onclick="toggleHTMLMode()"><i class="fa-brands fa-html5"></i></button>
+            <button onclick="downloadFile('html')"><i class="fas fa-file-code"></i></button>
+            <button onclick="downloadFile('txt')"><i class="fas fa-file-alt"></i></button>
+            <button onclick="executeHTMLCode()"><i class="fa-solid fa-terminal"></i></button>
+        </div>
+        <div id="editor" contenteditable="true"></div>
+        <div id="html-editor" style="display:none;"></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+  </html>
